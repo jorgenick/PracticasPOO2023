@@ -231,32 +231,30 @@ public class ManagerP2 {
 		    }
 		    
 			public static long substring(String n) {
-//				int conv = Integer.parseInt(n);
-//				if (conv < 1 || conv > 200000) {
-//					System.out.println("numero ingresado no valido");
-//					return 0;
-//				} else {
+
+				int longitud = n.length();
+				long acumulador = 0;
+				if (longitud < 1 || longitud > 200000) {
+					System.out.println("numero ingresado no valido");
+					return 0;
+				} else {
 					if (n.charAt(0) == '0') {
 						System.out.println("el numero ingresado no debe tener ceros a la izquierda");
 						return 0;
 					} else {
-						long acumulador = 0;
-						int longitud = n.length();
 						for (int i = 0; i < longitud; i++) {
-							// System.out.println("sumatoria I: " + acumulador);
 							long num = 0;
 							for (int j = i; j < longitud; j++) {
-								num = num * 10 % MOD + (n.charAt(j) - '0')% MOD;
-								acumulador = (acumulador + num)% MOD;
-								// System.out.println("sumatoria J: " + acumulador);
+								num = num * 10 % MOD + (n.charAt(j) - '0') % MOD;
+								acumulador = (acumulador + num) % MOD;
 							}
 						}
 						return acumulador;
 					}
 				}
-//			}
-		
-	}
+			}
+
+		}
 
 	
 
